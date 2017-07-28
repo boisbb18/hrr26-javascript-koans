@@ -29,7 +29,7 @@ describe("About Objects", function() {
     };
    
     var battleCry = meglomaniac.battleCry(4);
-    expect("They are Pinky and the Brain Brain Brain Brain").toMatch(battleCry);
+    expect("They are Pinky and the Brain Brain Brain Brain ").toMatch(battleCry);
   });
 
   it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
@@ -95,13 +95,13 @@ describe("About Objects", function() {
     colouredCircle.colour = "red";
     
     expect(simpleCircle.colour).toBe(undefined);
-    expect(colouredCircle.colour).toBe('red');
+    expect(colouredCircle.colour).toBe("red");
   
     Circle.prototype.describe = function() {
       return "This circle has a radius of: " + this.radius;
     };
   
-    expect(simpleCircle.describe()).toBe('This circle has a radius of: 10');
-    expect(colouredCircle.describe()).toBe('This circle has a radius of: 5');
+    expect(simpleCircle.describe()).toBe("This circle has a radius of: 10");
+    expect(colouredCircle.describe()).toBe("This circle has a radius of: 5");
   });
 });
